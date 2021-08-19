@@ -1,6 +1,11 @@
-let usernameInput = document.querySelector("#username-input")
+let searchInput = document.querySelector("#searchInput")
 
-usernameInput.addEventListener('keyup', function(event) {
+let results = document.querySelector("#results")
+
+
+
+searchInput.addEventListener('keyup', function(event) {
     let username = event.target.value.toLowerCase()
-    console.log(username)
+    let allNamesDOMCollection = document.querySelectorAll(".name")
+    console.log(allNamesDOMCollection[1].textContent)
 })
