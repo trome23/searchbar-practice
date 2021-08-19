@@ -1,11 +1,12 @@
-let searchInput = document.querySelector("#searchInput")
-
-let results = document.querySelector("#results")
-
-
+const searchInput = document.querySelector("#searchInput")
+const results = document.querySelector("#results")
+const allNamesDOMCollection = document.querySelectorAll(".name")
 
 searchInput.addEventListener('keyup', function(event) {
-    let username = event.target.value.toLowerCase()
-    let allNamesDOMCollection = document.querySelectorAll(".name")
-    console.log(allNamesDOMCollection[1].textContent)
+    let searchQuery = event.target.value.toLowerCase()    
+
+    for (let counter = 0; counter < allNamesDOMCollection.length; counter++) {
+        const currentName = allNamesDOMCollection[counter].textContent.toLowerCase();
+        console.log(currentName)
+    }
 })
