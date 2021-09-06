@@ -1,36 +1,20 @@
-// const searchInput = document.querySelector("#searchInput")
-// const namesFromDOM = document.querySelectorAll(".name")
-// console.log(namesFromDOM)
-
-// searchInput.addEventListener('keyup', function (event) {
-//     const { value } = event.target
-
-//     const searchQuery = value.toLowerCase()
-
-//     for (const nameElement of namesFromDOM) {
-//         let name = nameElement.textContent.toLowerCase()
-
-//         if (name.includes(searchQuery)) {
-//             nameElement.style.display = 'block'
-//         } else {
-//             nameElement.style.display = 'none'
-//         }
-//     }
-// })
-
 const searchInput = document.querySelector("#searchInput")
-const results = document.querySelector("#results")
-const allNamesDOMCollection = document.querySelectorAll(".name")
+const namesFromDOM = document.querySelectorAll(".name")
 
-searchInput.addEventListener('keyup', function(event) {
-    let searchQuery = event.target.value.toLowerCase()    
+searchInput.addEventListener('keyup', (event) => {
 
-    for (let i = 0; i < allNamesDOMCollection.length; i++) {
-        const currentName = allNamesDOMCollection[i].textContent.toLowerCase();
-        if (currentName.includes(searchQuery)) {
-            allNamesDOMCollection[i].style.display = "block"
+
+    const searchQuery = event.target.value.charAt(0).toLowerCase()
+    console.log(searchQuery)
+
+    for (const nameElement of namesFromDOM) {
+        let name = nameElement.textContent.toLowerCase()
+
+        if (name.charAt(0).includes(searchQuery)) {
+            nameElement.style.display = 'block'
         } else {
-            allNamesDOMCollection[i].style.display = "none"
+            nameElement.style.display = 'none'
         }
     }
+
 })
